@@ -15,6 +15,8 @@ export const showAllCategories = () => (dispatch, getState) => {
   axios
     .get(`https://api.eventful.com/json/categories/list?${apiKey}`)
     .then(response => {
-      console.log(response);
-    });
+      dispatch(showAllCategoriesSuccess(response.data));
+      console.log(">>>response.data @showAllCategories action)", response.data);
+    })
+    .catch(console.error);
 };

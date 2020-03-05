@@ -1,11 +1,23 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import CategoriesList from "./CategoriesList";
+import { showAllCategories } from "../../actions/events";
 
 class CategoriesListContainer extends Component {
-  componentDidMount() {}
+  componentDidMount() {
+    console.log("this.props @CategoriesList comp", this.props);
+  }
   render() {
     return <CategoriesList />;
   }
 }
 
-export default CategoriesListContainer;
+const mapStateToProps = state => {
+  return {
+    categories: state.categoriess
+  };
+};
+
+export default connect(mapStateToProps, { showAllCategories })(
+  CategoriesListContainer
+);
