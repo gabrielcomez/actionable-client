@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const apiKey = "app_key=JgtjrXBpwvHSjN5b";
+
 export const All_CATEGORIES = "All_CATEGORIES";
 
 function showAllCategoriesSuccess(categories) {
@@ -10,7 +12,9 @@ function showAllCategoriesSuccess(categories) {
 }
 
 export const showAllCategories = () => (dispatch, getState) => {
-  axios.get("https://api.eventful.com/json/categories/list").then(response => {
-    console.log(response);
-  });
+  axios
+    .get(`https://api.eventful.com/json/categories/list?${apiKey}`)
+    .then(response => {
+      console.log(response);
+    });
 };
