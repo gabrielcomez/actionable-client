@@ -13,10 +13,17 @@ function showAllCategoriesSuccess(categories) {
 
 export const showAllCategories = () => (dispatch, getState) => {
   axios
-    .get(`https://api.eventful.com/json/categories/list?${apiKey}`)
+    .get(`http://localhost:4000/category`)
+
+    // .get(`https://api.eventful.com/json/categories/list?${apiKey}`) // categories
     .then(response => {
+      console.log("____________________________________response", response);
+
       dispatch(showAllCategoriesSuccess(response.data));
-      console.log(">>>response.data @showAllCategories action)", response.data);
+      console.log(
+        ">>>response.data @showAllCategories action)",
+        response.category
+      );
     })
     .catch(console.error);
 };
