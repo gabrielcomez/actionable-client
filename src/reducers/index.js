@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
-import events from "./events";
+import category from "./category";
+import location from "./location";
 
-export default combineReducers({ events });
+export default combineReducers({ category, location });

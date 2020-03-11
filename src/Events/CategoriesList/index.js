@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import CategoriesList from "./CategoriesList";
-import { showAllCategories } from "../../actions/events";
+import { showAllCategories } from "../../actions/category";
 
 class CategoriesListContainer extends Component {
   componentDidMount() {
@@ -9,18 +9,16 @@ class CategoriesListContainer extends Component {
     this.props.showAllCategories();
   }
   render() {
-    return <CategoriesList />;
+    return <CategoriesList category={this.props.category} />;
   }
 }
 
 const mapStateToProps = state => {
   return {
-    categories: state.categories
+    category: state.category
   };
 };
 
 export default connect(mapStateToProps, { showAllCategories })(
   CategoriesListContainer
 );
-
-// categories={this.pros.categories}
