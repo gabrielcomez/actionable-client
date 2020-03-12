@@ -7,12 +7,12 @@ export const SHOW_ONE_EVENT = "SHOW_ONE_EVENT";
 function showOneEventSuccess(event) {
   return {
     type: SHOW_ONE_EVENT,
-    payload: { event }
+    payload: event
   };
 }
 
-export const showOneEvent = (location, id) => (dispatch, getState) => {
-  axios(`${dbUrl}/events/${location}/${id}`)
+export const showOneEvent = id => (dispatch, getState) => {
+  axios(`${dbUrl}/event/${id}`)
     .then(response => {
       console.log("response.data.category @category action", response);
       dispatch(showOneEventSuccess(response.data));

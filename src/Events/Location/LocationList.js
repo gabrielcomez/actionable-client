@@ -13,7 +13,7 @@ export default function LocationList(props) {
       <main>
         <div>
           {props.location.map(loc => {
-            console.log("mapped loc", loc);
+            // console.log("mapped loc", loc);
 
             return (
               <Link
