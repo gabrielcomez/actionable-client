@@ -15,7 +15,6 @@ class SingUp extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.history.push("/event");
     this.setState({ name: "", email: "", password: "" });
   };
 
