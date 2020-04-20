@@ -7,6 +7,7 @@ import Location from "./Events/Location/";
 import LocationList from "./Events/Location/LocationListContainer";
 import EventDetails from "./Events/EventDetails";
 import SignIn from "./Users/SignIn";
+import SignUp from "./Users/SignUp";
 
 class App extends React.Component {
   render() {
@@ -17,7 +18,8 @@ class App extends React.Component {
           <Route exact path="/events" component={Location} />
           <Route exact path="/events/:location" component={LocationList} />
           <Route exact path="/events/:location/:id" component={EventDetails} />
-          <Route exact path="/sign/in" component={SignIn} />
+          <Route exact path="/signin" component={SignIn} />
+          <Route exact path="/signup" component={SignUp} />
         </Router>
       </div>
     );
@@ -27,8 +29,6 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   console.log(">>>state @app comp", state);
 
-  return {
-    // loggedUser: state.users.token !== null,
-  };
+  return {};
 };
 export default connect(mapStateToProps)(App);
