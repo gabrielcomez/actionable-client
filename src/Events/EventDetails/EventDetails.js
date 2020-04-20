@@ -17,9 +17,9 @@ export default function EventDetails(props) {
           {props.event.city}
         </p>
         {props.event.images ? (
-          <img src={props.event.images.image.medium.url} />
+          <img src={props.event.images.image.medium.url} alt="event" />
         ) : (
-          <img src={defimg} alt="event" height="auto" width="500" />
+          <img src={defimg} alt="default event" height="auto" width="500" />
         )}
 
         <div

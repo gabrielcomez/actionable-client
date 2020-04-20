@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import UserForm from "../Form";
 
-class Login extends Component {
+class SignIn extends Component {
   state = {
     name: "",
     email: "",
@@ -15,9 +15,6 @@ class Login extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
-    // this.props.dispatch(login(this.state.email, this.state.password));
-
     this.setState({ name: "", email: "", password: "" });
   };
 
@@ -28,7 +25,7 @@ class Login extends Component {
           <h1>Welcome back!</h1>
         ) : (
           <UserForm
-            text="Login 👋"
+            text="sign in 👋"
             isLogin
             values={this.state}
             handleChange={this.handleChange}
@@ -41,8 +38,8 @@ class Login extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(">>>state @login comp", state.users);
+  console.log(">>>state @signin comp", state);
   return {};
 };
 
-export default connect(mapStateToProps)(Login);
+export default connect(mapStateToProps)(SignIn);
