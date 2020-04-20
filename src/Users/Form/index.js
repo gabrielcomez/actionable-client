@@ -4,8 +4,14 @@ const UserForm = (props) => {
   const isLogin = props.isLogin;
   return (
     <div>
-      <h1>Have you already {props.text} ?</h1>
+      <h1>{props.text}</h1>
       <br />
+      <img
+        src="https://images.pexels.com/photos/939328/pexels-photo-939328.jpeg?"
+        alt="sign img"
+        height="auto"
+        width="400"
+      />
       <form onSubmit={props.handleSubmit}>
         {!isLogin && (
           <>
