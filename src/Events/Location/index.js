@@ -14,16 +14,12 @@ class LocationFormContainer extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log("this.state @LocationFormContainer handleSubmit", this.state);
-    console.log("this.props @LocationFormContainer handleSubmit", this.props);
     this.props.queryLocation(this.state.location);
     this.props.history.push(`/events/${this.state.location}`);
     this.setState({ location: "" });
   };
 
   render() {
-    console.log("this.props @LocationFormContainer render", this.props);
-
     return (
       <div>
         <h1>Search by location</h1>

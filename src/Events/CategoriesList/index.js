@@ -5,7 +5,6 @@ import { showAllCategories } from "../../actions/category";
 
 class CategoriesListContainer extends Component {
   componentDidMount() {
-    console.log("this.props @CategoriesList comp", this.props);
     this.props.showAllCategories();
   }
   render() {

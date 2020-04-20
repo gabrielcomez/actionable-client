@@ -2,7 +2,9 @@ import React from "react";
 import defimg from "../../defimg.jpg";
 
 export default function EventDetails(props) {
-  console.log(">>>props @Event Details comp", props);
+  if (!props.event) {
+    return "loading";
+  }
   return (
     <main>
       <div>

@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 
 export default function LocationList(props) {
   console.log(">>>props @LocationList comp", props);
-  // if (!props.location) {
-  //   return "loading...";
-  // } else
   if (props.location.length === 0) {
     return "loading...";
   } else {
@@ -13,8 +10,6 @@ export default function LocationList(props) {
       <main>
         <div>
           {props.location.map(loc => {
-            // console.log("mapped loc", loc);
-
             return (
               <Link
                 key={loc.id}

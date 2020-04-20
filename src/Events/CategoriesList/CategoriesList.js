@@ -1,8 +1,6 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 
 export default function CategoriesList(props) {
-  console.log(">>>props @CategoriesList comp", props);
   if (!props.category) {
     return "loading...";
   } else if (props.category.length === 0) {
@@ -20,7 +18,3 @@ export default function CategoriesList(props) {
     );
   }
 }
-
-//<Link key={cat.id} to={`/category/${cat.id}/events`}>
-//<button>{cat.id}</button>
-//</Link>

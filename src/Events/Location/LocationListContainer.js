@@ -5,7 +5,6 @@ import LocationList from "./LocationList";
 
 class LocationFormContainer extends React.Component {
   componentDidMount() {
-    console.log(">>>this.props @location container", this.props);
     this.props.queryLocation(this.props.match.params.location);
   }
   render() {
@@ -25,7 +24,6 @@ class LocationFormContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(">>>state @location mapStateToProps", state);
   return {
     location: state.location
   };
