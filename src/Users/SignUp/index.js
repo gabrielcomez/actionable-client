@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import UserForm from "../Form";
 import { signup } from "../../actions/users";
+import { Link } from "react-router-dom";
 
 class SingUpCont extends Component {
   state = {
@@ -26,18 +27,25 @@ class SingUpCont extends Component {
 
   render() {
     return (
-      <div>
-        {this.props.isSignUp ? (
-          <h1>Welcome back!</h1>
-        ) : (
-          <UserForm
-            text="sign in 🙌"
-            handleSubmit={this.handleSubmit}
-            handleChange={this.handleChange}
-            values={this.state}
-          />
-        )}
-      </div>
+      <main>
+        <div>
+          {this.props.isSignUp ? (
+            <h1>Welcome back!</h1>
+          ) : (
+            <UserForm
+              text="sign up 🙌"
+              handleSubmit={this.handleSubmit}
+              handleChange={this.handleChange}
+              values={this.state}
+            />
+          )}
+        </div>
+        <p>
+          If you alredy have an account, go to
+          <Link to="/signin"> sing in</Link>
+          🔑
+        </p>
+      </main>
     );
   }
 }

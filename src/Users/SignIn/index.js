@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import UserForm from "../Form";
+import { signin } from "../../actions/users";
 
 class SignIn extends Component {
   state = {
@@ -15,6 +16,7 @@ class SignIn extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    this.props.dispatch(signin(this.state.email, this.state.password));
     this.setState({ name: "", email: "", password: "" });
   };
 
@@ -25,7 +27,7 @@ class SignIn extends Component {
           <h1>Welcome back!</h1>
         ) : (
           <UserForm
-            text="sign in 👋"
+            text="sign in 🔑"
             isLogin
             values={this.state}
             handleChange={this.handleChange}
