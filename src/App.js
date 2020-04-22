@@ -29,6 +29,8 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   console.log(">>>state @app comp", state);
 
-  return {};
+  return {
+    loggedUser: state.users.token !== null,
+  };
 };
 export default connect(mapStateToProps)(App);

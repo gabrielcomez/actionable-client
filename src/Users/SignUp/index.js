@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import UserForm from "../Form";
+import { signup } from "../../actions/users";
 
-class SingUp extends Component {
+class SingUpCont extends Component {
   state = {
     name: "",
     email: "",
@@ -15,13 +16,18 @@ class SingUp extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    console.log(">>>this.props @signup comp", this.props);
+
+    this.props.dispatch(
+      signup(this.state.name, this.state.email, this.state.password)
+    );
     this.setState({ name: "", email: "", password: "" });
   };
 
   render() {
     return (
       <div>
-        {this.props.newUser ? (
+        {this.props.isSignUp ? (
           <h1>Welcome back!</h1>
         ) : (
           <UserForm
@@ -37,8 +43,10 @@ class SingUp extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log("signup comp", state);
-  return {};
+  console.log(">>>state @signup comp", state);
+  return {
+    isSignUp: state.users.isSignUp,
+  };
 };
 
-export default connect(mapStateToProps)(SingUp);
+export default connect(mapStateToProps)(SingUpCont);

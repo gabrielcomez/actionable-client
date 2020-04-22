@@ -39,7 +39,8 @@ class SignIn extends Component {
 
 const mapStateToProps = (state) => {
   console.log(">>>state @signin comp", state);
-  return {};
+  return {
+    token: state.users.auth,
+  };
 };
-
 export default connect(mapStateToProps)(SignIn);
