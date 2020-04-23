@@ -22,20 +22,20 @@ export function signup(name, email, password) {
   };
 }
 
-function signinDone(token, name) {
-  return { type: SIGN_IN, payload: { token, name } };
+function signinDone(id, token, name) {
+  return { type: SIGN_IN, payload: { id, token, name } };
 }
 
 export function signin(email, password) {
   return async function (dispatch, getState) {
-    console.log("signin action email & password:", email, password);
-
     const response = await axios.post(`${dbUrl}/signin`, {
       email: email,
       password: password,
     });
     console.log("signin action response:", response);
 
-    dispatch(signinDone(response.data.token, response.data.name));
+    dispatch(
+      signinDone(response.data.id, response.data.token, response.data.name)
+    );
   };
 }

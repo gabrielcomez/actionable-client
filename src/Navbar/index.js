@@ -1,11 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import Navbar from "./NavBar";
 
-export default function Navbar() {
-  return (
-    <nav className="NavBar">
-      <Link to="/"> home </Link>
-      <Link to="/signup"> users</Link>
-    </nav>
-  );
+class NavbarContainer extends Component {
+  render() {
+    return <Navbar user={this.props.user} />;
+  }
 }
+const mapStateToProps = (state) => {
+  console.log(">>>state @navbar comp", state);
+  return {
+    user: state.user,
+  };
+};
+
+export default connect(mapStateToProps)(NavbarContainer);

@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import defProfile from "../../defProfile.jpeg";
 
 export default function UserProfile(props) {
-  console.log(props);
-
   return (
     <div>
       {props.user.token === null ? (
