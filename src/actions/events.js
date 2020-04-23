@@ -1,4 +1,3 @@
-// import axios from "axios";
 import axios from "../axios";
 
 const dbUrl = process.DATABASE_URL || "http://localhost:4000";
@@ -8,14 +7,14 @@ export const SHOW_ONE_EVENT = "SHOW_ONE_EVENT";
 function showOneEventSuccess(event) {
   return {
     type: SHOW_ONE_EVENT,
-    payload: event
+    payload: event,
   };
 }
 
-export const showOneEvent = id => {
-  return async function(dispatch, getState) {
+export const showOneEvent = (id) => {
+  return async function (dispatch, getState) {
     axios(`${dbUrl}/event/${id}`)
-      .then(response => {
+      .then((response) => {
         console.log("response.data.category @category action", response);
         dispatch(showOneEventSuccess(response.data));
       })
