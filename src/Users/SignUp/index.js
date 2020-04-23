@@ -47,7 +47,7 @@ class SingUpCont extends Component {
 const mapStateToProps = (state) => {
   console.log(">>>state @signup comp", state);
   return {
-    isSignUp: state.users.isSignUp,
+    isSignUp: state.user.isSignUp,
   };
 };
 

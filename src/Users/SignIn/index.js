@@ -18,6 +18,7 @@ class SignIn extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.dispatch(signin(this.state.email, this.state.password));
+    this.props.history.push("/profile/:id");
     this.setState({ name: "", email: "", password: "" });
   };
 
@@ -44,7 +45,7 @@ class SignIn extends Component {
 const mapStateToProps = (state) => {
   console.log(">>>state @signin comp", state);
   return {
-    token: state.users.auth,
+    token: state.user.auth,
   };
 };
 export default connect(mapStateToProps)(SignIn);

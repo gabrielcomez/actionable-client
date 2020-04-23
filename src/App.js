@@ -2,14 +2,14 @@ import React from "react";
 import "./App.css";
 import Home from "./Events/Home";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { connect } from "react-redux";
 import Location from "./Events/Location/";
 import LocationList from "./Events/Location/LocationListContainer";
 import EventDetails from "./Events/EventDetails";
 import SignIn from "./Users/SignIn";
 import SignUp from "./Users/SignUp";
+import UserProfile from "./Users/Profile";
 
-class App extends React.Component {
+export default class App extends React.Component {
   render() {
     return (
       <div className="App">
@@ -24,17 +24,9 @@ class App extends React.Component {
           <Route exact path="/events/:location/:id" component={EventDetails} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/profile/:id" component={UserProfile} />
         </Router>
       </div>
     );
   }
 }
-
-const mapStateToProps = (state) => {
-  console.log(">>>state @app comp", state);
-
-  return {
-    loggedUser: state.users.token !== null,
-  };
-};
-export default connect(mapStateToProps)(App);
