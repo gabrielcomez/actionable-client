@@ -11,7 +11,7 @@ export default function Home() {
       <br />
       <Link to={"/events"}>
         <button>
-          <h1>Search by location</h1>
+          <h3>Search by location</h3>
         </button>
       </Link>
     </div>

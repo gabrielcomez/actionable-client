@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
 import Home from "./Events/Home";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Navbar from "./Navbar";
 import Location from "./Events/Location/";
 import LocationList from "./Events/Location/LocationListContainer";
 import EventDetails from "./Events/EventDetails";
@@ -14,10 +15,7 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <Router>
-          <nav className="NavBar">
-            <Link to="/"> home </Link>
-            <Link to="/signup"> users</Link>
-          </nav>
+          <Navbar />
           <Route exact path="/" component={Home} />
           <Route exact path="/events" component={Location} />
           <Route exact path="/events/:location" component={LocationList} />
