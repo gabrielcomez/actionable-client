@@ -27,25 +27,19 @@ class SingUpCont extends Component {
 
   render() {
     return (
-      <main>
-        <div>
-          {this.props.isSignUp ? (
-            <h1>Welcome back!</h1>
-          ) : (
-            <UserForm
-              text="sign up 🙌"
-              handleSubmit={this.handleSubmit}
-              handleChange={this.handleChange}
-              values={this.state}
-            />
-          )}
-        </div>
+      <div>
+        <UserForm
+          text="sign up 🙌"
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          values={this.state}
+        />
         <p>
-          If you alredy have an account, go to
+          If you alredy have an account,
           <Link to="/signin"> sing in</Link>
           🔑
         </p>
-      </main>
+      </div>
     );
   }
 }

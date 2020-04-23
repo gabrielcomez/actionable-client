@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import UserForm from "../Form";
 import { signin } from "../../actions/users";
 
@@ -23,17 +24,18 @@ class SignIn extends Component {
   render() {
     return (
       <div>
-        {this.props.loggedUser ? (
-          <h1>Welcome back!</h1>
-        ) : (
-          <UserForm
-            text="sign in 🔑"
-            isLogin
-            values={this.state}
-            handleChange={this.handleChange}
-            handleSubmit={this.handleSubmit}
-          />
-        )}
+        <UserForm
+          text="sign in 🔑"
+          isLogin
+          values={this.state}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+        <p>
+          If you don't have an account yet,
+          <Link to="/signup"> sing up</Link>
+          🙌
+        </p>
       </div>
     );
   }

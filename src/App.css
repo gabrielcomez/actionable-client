@@ -17,13 +17,12 @@
 }
 
 body {
-  background-color: #cc1486;
-  color: #33ff99;
+  color: #336699;
 }
 
 a {
   text-decoration: none;
-  color: #336699;
+  color: #113399;
 }
 
 button {
@@ -35,4 +34,6 @@ button {
   padding: 2%;
 }
 
-/* 33ff99 */
+/* fluorescent green: 33ff99 */
+/* dark blue: 336699 */
+/* fuscia: cc1486 */
