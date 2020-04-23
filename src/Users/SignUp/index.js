@@ -18,7 +18,6 @@ class SingUpCont extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     console.log(">>>this.props @signup comp", this.props);
-
     this.props.dispatch(
       signup(this.state.name, this.state.email, this.state.password)
     );

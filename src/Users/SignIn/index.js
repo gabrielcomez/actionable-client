@@ -27,7 +27,7 @@ class SignIn extends Component {
       <div>
         <UserForm
           text="sign in 🔑"
-          isLogin
+          isSignIn
           values={this.state}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}

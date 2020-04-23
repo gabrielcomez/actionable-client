@@ -1,7 +1,9 @@
 import React from "react";
 
 const UserForm = (props) => {
-  const isLogin = props.isLogin;
+  console.log(">>>props @UserForm comp", props);
+
+  const isSignIn = props.isSignIn;
   return (
     <div>
       <h1>{props.text}</h1>
@@ -13,7 +15,7 @@ const UserForm = (props) => {
         width="400"
       />
       <form onSubmit={props.handleSubmit}>
-        {!isLogin && (
+        {!isSignIn && (
           <>
             <label>Name:</label>
             <input
