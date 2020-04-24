@@ -4,6 +4,8 @@ import GoalButton from "./GoalButton";
 
 class GoalButtonContainer extends Component {
   render() {
+    console.log("Is the button getting props?", this.props);
+
     return <GoalButton event={this.props.event} />;
   }
 }

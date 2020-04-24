@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class GoalButton extends Component {
   onClick = (event) => {
@@ -9,13 +10,22 @@ class GoalButton extends Component {
 
   render() {
     console.log(">>>props @GoalButton comp", this.props);
-    return <button onClick={this.onClick}>+ goal</button>;
+    if (this.props.userIsSignedIn) {
+      return <button onClick={this.onClick}>+ goal</button>;
+    }
+    return (
+      <div>
+        To add this event to your goals
+        <Link to="/signin"> sing in</Link>
+        🔑
+      </div>
+    );
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    location: state.location,
+    userIsSignedIn: state.user.token !== null,
   };
 };
 
