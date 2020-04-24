@@ -1,4 +1,4 @@
-import { GOAL_ADD } from "../actions/goals";
+import { GOAL_ADD, GOAL_DEL } from "../actions/goals";
 
 const initialState = { isAdded: false, token: null };
 
@@ -7,6 +7,9 @@ export default (state = initialState, action = {}) => {
     case GOAL_ADD:
       console.log(">>>goal adding action payload", action.payload);
       return { ...state, isAdded: true };
+    case GOAL_DEL:
+      console.log(">>>goal deleting action payload", action.payload);
+      return { ...state, isAdded: false };
 
     default:
       return state;
