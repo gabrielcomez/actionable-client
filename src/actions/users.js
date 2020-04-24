@@ -17,7 +17,6 @@ export function signup(name, email, password) {
       password: password,
     });
     if (response.status === 201) {
-      // console.log("signup action response:", response);
       dispatch(signupDone());
     }
   };
@@ -33,8 +32,6 @@ export function signin(email, password) {
       email: email,
       password: password,
     });
-    // console.log("signin action response:", response);
-
     dispatch(
       signinDone(response.data.id, response.data.token, response.data.name)
     );
