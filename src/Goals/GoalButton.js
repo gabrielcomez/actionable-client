@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import addingGoal from "../actions/goals";
 
 class GoalButton extends Component {
-  onClick = (event) => {
+  add = (event) => {
     event.preventDefault();
     console.log(">>>this.props @GoalButton onClick", this.props);
     this.props.dispatch(
@@ -17,9 +17,17 @@ class GoalButton extends Component {
   };
 
   render() {
-    // console.log(">>>props @GoalButton comp", this.props);
+    console.log(">>>props @GoalButton comp", this.props);
     if (this.props.userIsSignedIn) {
-      return <button onClick={this.onClick}>+ goal</button>;
+      return (
+        <div>
+          {this.props.isAdded ? (
+            <button onClick={this.add}> - goal</button>
+          ) : (
+            <button onClick={this.add}>+ goal</button>
+          )}
+        </div>
+      );
     }
     return (
       <div>
@@ -33,6 +41,7 @@ class GoalButton extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    isAdded: state.goal.isAdded,
     userId: state.user.id,
     userIsSignedIn: state.user.token !== null,
   };
