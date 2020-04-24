@@ -1,15 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import addingGoal from "../actions/goals";
 
 class GoalButton extends Component {
   onClick = (event) => {
     event.preventDefault();
-    console.log("GOAL ADDED @GoalButton");
+    console.log(">>>this.props @GoalButton onClick", this.props);
+    this.props.dispatch(
+      addingGoal(
+        this.props.userId,
+        this.props.event.title,
+        this.props.event.start_time
+      )
+    );
   };
 
   render() {
-    console.log(">>>props @GoalButton comp", this.props);
+    // console.log(">>>props @GoalButton comp", this.props);
     if (this.props.userIsSignedIn) {
       return <button onClick={this.onClick}>+ goal</button>;
     }
@@ -25,6 +33,7 @@ class GoalButton extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    userId: state.user.id,
     userIsSignedIn: state.user.token !== null,
   };
 };
