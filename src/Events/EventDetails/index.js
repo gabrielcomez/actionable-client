@@ -11,9 +11,7 @@ class EventDetailsContainer extends Component {
   render() {
     console.log(">>>props @EventDetailsCont", this.state);
 
-    return (
-      "This is being rendered", (<EventDetails event={this.props.event} />)
-    );
+    return <EventDetails event={this.props.event} />;
   }
 }
 
