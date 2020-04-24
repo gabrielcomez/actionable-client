@@ -5,12 +5,9 @@ import { showOneEvent } from "../../actions/events";
 
 class EventDetailsContainer extends Component {
   componentDidMount() {
-    console.log("this is being dispatched");
     this.props.showOneEvent(this.props.match.params.id);
   }
   render() {
-    console.log(">>>props @EventDetailsCont", this.state);
-
     return <EventDetails event={this.props.event} />;
   }
 }

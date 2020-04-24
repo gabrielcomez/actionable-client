@@ -7,24 +7,33 @@ export default function EventDetails(props) {
   }
   return (
     <main>
-      <div>
-        <h2>{props.event.title}</h2>
-        <p>
-          {props.event.venue_name ? props.event.venue_name + " // " : null}
-          {props.event.address
-            ? <strong>{props.event.address} </strong> + " // "
-            : null}
-          {props.event.city ? props.event.city : null}
-        </p>
-        <EventDetailsImg event={props.event} />
-        <div
-          dangerouslySetInnerHTML={{ __html: props.event.description }}
-        ></div>
-      </div>
-      <br />
-      {props.event && props.event.url ? (
-        <a href={props.event.url}> + info</a>
+      {/* If the event's category is fetched: */}
+      {props.event.categories ? (
+        <div>
+          {props.event.categories.category.map((cat, index) => (
+            <p key={index}>
+              This event's category is <strong>{cat.id}</strong>
+            </p>
+          ))}
+        </div>
       ) : null}
+
+      <h2>{props.event.title}</h2>
+      <p>
+        {/* If the event's venue is fetched: */}
+        {props.event.venue_name ? props.event.venue_name + " // " : null}
+
+        {/* If the event's address is fetched: */}
+        {props.event.address ? props.event.address + " // " : null}
+
+        {/* If the event's city is fetched: */}
+        {props.event.city ? props.event.city : null}
+      </p>
+      <EventDetailsImg event={props.event} />
+      <div dangerouslySetInnerHTML={{ __html: props.event.description }}></div>
+
+      <br />
+      <a href={props.event.url}> + info</a>
     </main>
   );
 }
