@@ -4,7 +4,7 @@ import UserForm from "../Form";
 import { signup } from "../../actions/users";
 import { Link } from "react-router-dom";
 
-class SingUpCont extends Component {
+class SingUpContainer extends Component {
   state = {
     name: "",
     email: "",
@@ -43,11 +43,4 @@ class SingUpCont extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  console.log(">>>state @signup comp", state);
-  return {
-    isSignUp: state.user.isSignUp,
-  };
-};
-
-export default connect(mapStateToProps)(SingUpCont);
+export default connect()(SingUpContainer);

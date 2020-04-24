@@ -5,9 +5,9 @@ const initialState = { isSignUp: false, token: null };
 export default (state = initialState, action = {}) => {
   switch (action.type) {
     case SIGN_UP:
+      console.log(">>>sign up action payload", action.payload);
       return { ...state, isSignUp: true };
     case SIGN_IN:
-      console.log(">>>sign in action payload", action.payload);
       return {
         ...state,
         id: action.payload.id,

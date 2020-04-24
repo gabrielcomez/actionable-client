@@ -1,10 +1,12 @@
 import React from "react";
-import defimg from "../../defimg.jpg";
+import EventDetailsImg from "./EventDetailsImg";
 
 export default function EventDetails(props) {
   if (!props.event) {
     return "loading";
   }
+  console.log(">>>props @EventDetails", props);
+
   return (
     <main>
       <div>
@@ -16,18 +18,16 @@ export default function EventDetails(props) {
           {" // "}
           {props.event.city}
         </p>
-        {props.event.images ? (
-          <img src={props.event.images.image.medium.url} alt="event" />
-        ) : (
-          <img src={defimg} alt="default event" height="auto" width="500" />
-        )}
+        <EventDetailsImg event={props.event} />
 
         <div
           dangerouslySetInnerHTML={{ __html: props.event.description }}
         ></div>
       </div>
       <br />
-      <a href={props.event.url}> + info</a>
+      {props.event && props.event.url ? (
+        <a href={props.event.url}> + info</a>
+      ) : null}
     </main>
   );
 }
