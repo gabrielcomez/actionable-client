@@ -3,7 +3,6 @@ import axios from "axios";
 const dbUrl = process.DATABASE_URL || "http://localhost:4000";
 
 export const GOAL_ADD = "GOAL_ADD";
-export const GOAL_DEL = "GOAL_DEL";
 
 function addingGoalSuccess(goal) {
   return {
