@@ -11,7 +11,8 @@ class GoalButton extends Component {
       addingGoal(
         this.props.userId,
         this.props.event.title,
-        this.props.event.start_time
+        this.props.event.start_time,
+        this.props.event.id
       )
     );
   };

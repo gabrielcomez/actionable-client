@@ -11,7 +11,7 @@ function addingGoalSuccess(goal) {
   };
 }
 
-export function addingGoal(userId, name, date) {
+export function addingGoal(userId, name, date, eventId) {
   return async function (dispatch, getState) {
     const token = getState().user.token;
 
@@ -19,7 +19,7 @@ export function addingGoal(userId, name, date) {
       method: "POST",
       url: `${dbUrl}/goal`,
       headers: { authorization: `Bearer ${token}` },
-      data: { userId, name, date },
+      data: { userId, name, date, eventId },
     });
     console.log(">>>response.data @addingGoal action)", response.data);
     dispatch(addingGoalSuccess(response.data));
