@@ -1,5 +1,6 @@
 import React from "react";
 import EventDetailsImg from "./EventDetailsImg";
+import Goals from "../../Goals";
 
 export default function EventDetails(props) {
   if (!props.event) {
@@ -34,6 +35,7 @@ export default function EventDetails(props) {
 
       <br />
       <a href={props.event.url}> + info</a>
+      <Goals />
     </main>
   );
 }
