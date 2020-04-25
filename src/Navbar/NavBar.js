@@ -9,7 +9,8 @@ export default function NavBar(props) {
       <Link to="/signup"> users</Link>
       {props.user.token !== null && props.user.name !== null ? (
         <p>
-          You are signed in as <Link to="/profile/:id"> {props.user.name}</Link>{" "}
+          You are signed in as{" "}
+          <Link to={`/profile/${props.user.id}`}> {props.user.name}</Link>{" "}
         </p>
       ) : null}
     </nav>
