@@ -18,7 +18,7 @@ class SignIn extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.dispatch(signin(this.state.email, this.state.password));
-    this.props.history.push("/profile/:id");
+    this.props.history.push(`/`);
     this.setState({ name: "", email: "", password: "" });
   };
 

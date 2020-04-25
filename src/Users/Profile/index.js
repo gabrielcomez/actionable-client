@@ -4,6 +4,8 @@ import UserProfile from "./UserProfile";
 
 class UserProfileContainer extends Component {
   render() {
+    console.log(">>>params @userProfile cont", this.props.match);
+
     return <UserProfile user={this.props.user} />;
   }
 }
