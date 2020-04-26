@@ -1,12 +1,24 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import UserProfile from "./UserProfile";
+import GoalList from "./GoasList";
+import { userGoals } from "../../actions/users";
 
 class UserProfileContainer extends Component {
+  componentDidMount() {
+    this.props.dispatch(userGoals(this.props.user.token));
+  }
   render() {
-    console.log(">>>params @userProfile cont", this.props.match);
-
-    return <UserProfile user={this.props.user} />;
+    return (
+      <main>
+        <div>
+          <UserProfile user={this.props.user} />
+        </div>
+        <div>
+          <GoalList user={this.props.user} />
+        </div>
+      </main>
+    );
   }
 }
 

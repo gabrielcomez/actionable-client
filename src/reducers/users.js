@@ -1,4 +1,4 @@
-import { SIGN_UP, SIGN_IN } from "../actions/users";
+import { SIGN_UP, SIGN_IN, USER_GOALS } from "../actions/users";
 
 const initialState = { isSignUp: false, token: null };
 
@@ -14,6 +14,9 @@ export default (state = initialState, action = {}) => {
         token: action.payload.token,
         name: action.payload.name,
       };
+    case USER_GOALS:
+      console.log(">>>user goals action payload", action.payload);
+      return { ...state, goals: action.payload };
 
     default:
       return state;
