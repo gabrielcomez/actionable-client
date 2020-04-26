@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function GoalList(props) {
-  console.log(">>>props @GoalList comp", props.user.goals);
+  // console.log(">>>props @GoalList comp", props.user.goals);
 
   if (props.user.token === null) {
     return null;

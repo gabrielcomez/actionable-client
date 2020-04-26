@@ -6,7 +6,7 @@ import { addingGoal } from "../actions/goals";
 class GoalButton extends Component {
   add = (event) => {
     event.preventDefault();
-    console.log(">>>this.props @GoalButton onClick", this.props);
+    // console.log(">>>this.props @GoalButton onClick", this.props);
     this.props.dispatch(
       addingGoal(
         this.props.userId,
@@ -19,7 +19,7 @@ class GoalButton extends Component {
   };
 
   render() {
-    console.log(">>>props @GoalButton comp", this.props);
+    // console.log(">>>props @GoalButton comp", this.props);
     if (this.props.userIsSignedIn) {
       return (
         <div>

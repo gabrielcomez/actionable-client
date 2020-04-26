@@ -10,8 +10,8 @@ export default function CategoriesList(props) {
       <main>
         <h2>These are the categories of events you can search through:</h2>
         <div>
-          {props.category.map(cat => {
-            return <button key={cat.id}>{cat.id}</button>;
+          {props.category.map((cat) => {
+            return <p key={cat.id}>{cat.id}</p>;
           })}
         </div>
       </main>
