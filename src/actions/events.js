@@ -15,12 +15,14 @@ export const showOneEvent = (id) => {
   return async function (dispatch, getState) {
     axios(`${dbUrl}/event/${id}`)
       .then((response) => {
-        console.log("response.data.category @category action", response);
+        // console.log("response @events action", response);
         dispatch(showOneEventSuccess(response.data));
       })
       .catch(console.error);
   };
 };
+
+// NOT AXIOS METHOD
 
 // export const showOneEvent = id => {
 //   return async function(dispatch, getState) {

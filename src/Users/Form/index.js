@@ -8,7 +8,7 @@ const UserForm = (props) => {
   return (
     <div>
       <div className="userFormImg">
-        <div className="home-text">
+        <div className="cover-text">
           <h3>{props.title}</h3>
         </div>
       </div>

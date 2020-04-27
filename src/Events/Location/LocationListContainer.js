@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { queryLocation } from "../../actions/location";
 import LocationList from "./LocationList";
+import "../../App.css";
 
 class LocationFormContainer extends React.Component {
   componentDidMount() {
@@ -9,23 +10,25 @@ class LocationFormContainer extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h3>
-          These are the events we have listed for{" "}
-          {this.props.match.params.location}
-        </h3>
+      <main>
+        <div className="locationFormImg">
+          <div className="cover-text">
+            <h3>events at {this.props.match.params.location}</h3>
+          </div>
+        </div>
+        <br />
         <LocationList
           location={this.props.location}
           params={this.props.match.params}
         />
-      </div>
+      </main>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    location: state.location
+    location: state.location,
   };
 };
 

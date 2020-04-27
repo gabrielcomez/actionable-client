@@ -53,7 +53,7 @@ export function userGoals(eventId) {
     const token = getState().user.token;
     const response = await axios({
       method: "GET",
-      url: `${dbUrl}/goal/${eventId}`,
+      url: `${dbUrl}/goal`,
       headers: { authorization: `Bearer ${token}` },
     });
     console.log(">>>getState @userGoals action", getState().user.id);

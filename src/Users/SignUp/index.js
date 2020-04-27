@@ -36,7 +36,7 @@ class SingUpContainer extends Component {
         />
         <p>
           If you alredy have an account,
-          <Link to="/signin"> sing in</Link>
+          <Link to="/signin"> sign in</Link>
           🔑
         </p>
       </div>

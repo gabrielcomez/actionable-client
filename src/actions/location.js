@@ -7,14 +7,14 @@ export const LOCATION_QUERY = "LOCATION_QUERY";
 function queryLocationSuccess(location) {
   return {
     type: LOCATION_QUERY,
-    payload: location
+    payload: location,
   };
 }
 
-export const queryLocation = location => (dispatch, getState) => {
+export const queryLocation = (location) => (dispatch, getState) => {
   axios(`${dbUrl}/events/${location}`)
-    .then(response => {
-      console.log("response.data.category @category action", response);
+    .then((response) => {
+      // console.log("response @location action", response);
       dispatch(queryLocationSuccess(response.data));
     })
     .catch(console.error);

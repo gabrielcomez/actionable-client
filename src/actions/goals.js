@@ -47,3 +47,27 @@ export function deletingGoal() {
     dispatch(deletingGoalSuccess(response.data));
   };
 }
+
+export const EVENT_GOAL = "EVENT_GOAL";
+
+function thisGoalSuccess(goal) {
+  return {
+    type: EVENT_GOAL,
+    payload: goal,
+  };
+}
+
+export function thisGoal(eventId) {
+  return async function (dispatch, getState) {
+    const token = getState().user.token;
+    const response = await axios({
+      method: "GET",
+      url: `${dbUrl}/goal/${eventId}`,
+      headers: { authorization: `Bearer ${token}` },
+    });
+    // console.log(">>>getState @userGoals action", getState().user.id);
+
+    console.log(">>>response.data @thisGoal action", response.data);
+    dispatch(thisGoalSuccess(response.data));
+  };
+}

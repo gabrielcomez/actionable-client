@@ -17,10 +17,11 @@ export default function GoalList(props) {
         <h4>Your goals: </h4>
         {props.user.goals.map((goal) => {
           return (
-            <ul key={goal.id}>
-              {goal.name}, in {goal.city}, on {goal.date},{" "}
-              <Link to={`/events/${goal.city}/${goal.eventId}`}>+info</Link>
-            </ul>
+            <Link key={goal.id} to={`/events/${goal.city}/${goal.eventId}`}>
+              <button>
+                {goal.name}, in {goal.city}, on {goal.date},{" "}
+              </button>
+            </Link>
           );
         })}
       </div>

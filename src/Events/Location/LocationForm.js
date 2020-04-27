@@ -13,7 +13,7 @@ const LocationSearch = (props) => {
           value={props.values.location}
           placeholder="search by location"
         />
-
+        <br />
         <input type="submit" />
       </form>
     </div>

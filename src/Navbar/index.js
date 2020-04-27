@@ -8,7 +8,7 @@ class NavbarContainer extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  console.log(">>>state @navbar comp", state);
+  // console.log(">>>state @navbar comp", state);
   return {
     user: state.user,
   };

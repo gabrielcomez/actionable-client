@@ -7,15 +7,15 @@ export const All_CATEGORIES = "All_CATEGORIES";
 function showAllCategoriesSuccess(category) {
   return {
     type: All_CATEGORIES,
-    payload: category
+    payload: category,
   };
 }
 
 export const showAllCategories = () => {
-  return async function(dispatch, getState) {
-    console.log("getState() @category action", getState());
+  return async function (dispatch, getState) {
+    // console.log("getState() @category action", getState());
     const response = await axios(`/category`);
-    console.log("response.data.category @category action", response.data);
+    // console.log("response.data.category @category action", response.data);
     dispatch(showAllCategoriesSuccess(response.data.category));
   };
 };

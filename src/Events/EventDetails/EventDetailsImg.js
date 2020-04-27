@@ -4,7 +4,7 @@ import defimg from "../../defimg.jpg";
 export default function EventDetailsImg(props) {
   console.log(">>>props.event @EventDetailsImg", props.event);
   if (!props.event.images) {
-    return <img src={defimg} alt="default event" height="auto" width="500" />;
+    return null;
   } else if (props.event.images.image && props.event.images.image.medium) {
     return <img src={props.event.images.image.medium.url} alt="event" />;
   } else if (props.event.images.image && props.event.images.image.small) {
