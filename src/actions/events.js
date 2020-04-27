@@ -22,7 +22,7 @@ export const showOneEvent = (id) => {
   };
 };
 
-// NOT AXIOS METHOD
+// NOT AUTH METHOD
 
 // export const showOneEvent = id => {
 //   return async function(dispatch, getState) {

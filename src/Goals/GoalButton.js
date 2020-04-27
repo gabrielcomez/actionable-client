@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { addingGoal } from "../actions/goals";
+import { deletingGoal } from "../actions/goals";
 
 class GoalButton extends Component {
   add = (event) => {
@@ -18,13 +19,22 @@ class GoalButton extends Component {
     );
   };
 
+  del = (event) => {
+    event.preventDefault();
+    console.log(
+      ">>>this.props @GoalButton DELETE onClick",
+      this.props.event.id
+    );
+    this.props.dispatch(deletingGoal(this.props.event.id));
+  };
+
   render() {
     // console.log(">>>props @GoalButton comp", this.props);
     if (this.props.userIsSignedIn) {
       return (
         <div>
           {this.props.isAdded ? (
-            <button onClick={this.add}> - goal</button>
+            <button onClick={this.del}> - goal</button>
           ) : (
             <button onClick={this.add}>+ goal</button>
           )}

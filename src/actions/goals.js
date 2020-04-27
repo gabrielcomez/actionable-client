@@ -34,16 +34,15 @@ function deletingGoalSuccess(goal) {
   };
 }
 
-export function deletingGoal() {
+export function deletingGoal(eventId) {
   return async function (dispatch, getState) {
     const token = getState().user.token;
-
     const response = await axios({
       method: "DELETE",
-      url: `${dbUrl}/goal`,
+      url: `${dbUrl}/goal/${eventId}`,
       headers: { authorization: `Bearer ${token}` },
     });
-    console.log(">>>response.data @addingGoal action)", response.data);
+    console.log(">>>response.data @deletingGoal action)", response.data);
     dispatch(deletingGoalSuccess(response.data));
   };
 }
