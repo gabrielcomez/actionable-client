@@ -1,4 +1,5 @@
 import React from "react";
+import "../../App.css";
 
 const UserForm = (props) => {
   console.log(">>>props @UserForm comp", props);
@@ -6,40 +7,42 @@ const UserForm = (props) => {
   const isSignIn = props.isSignIn;
   return (
     <div>
-      <h1>{props.text}</h1>
+      <div className="userFormImg">
+        <div className="home-text">
+          <h3>{props.title}</h3>
+        </div>
+      </div>
       <br />
-      <img
-        src="https://images.pexels.com/photos/939328/pexels-photo-939328.jpeg?"
-        alt="sign img"
-        height="auto"
-        width="400"
-      />
+      <h4>{props.text}</h4>
       <form onSubmit={props.handleSubmit}>
         {!isSignIn && (
           <>
-            <label>Name:</label>
+            {/* <label>name </label> */}
             <input
               onChange={props.handleChange}
-              type="name"
+              type="text"
               name="name"
+              placeholder="write your name here"
               value={props.values.name}
             />
           </>
         )}
         <br />
-        <label>Email:</label>
+        {/* <label>email </label> */}
         <input
           onChange={props.handleChange}
           type="email"
           name="email"
+          placeholder="write your email here"
           value={props.values.email}
         />
         <br />
-        <label>Password:</label>
+        {/* <label>password </label> */}
         <input
           onChange={props.handleChange}
           type="text"
           name="password"
+          placeholder="write your password here"
           value={props.values.password}
         />
         <br />

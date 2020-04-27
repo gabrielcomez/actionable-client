@@ -28,9 +28,10 @@ class SingUpContainer extends Component {
     return (
       <div>
         <UserForm
-          text="sign up 🙌"
-          handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          text="sign up 🙌"
+          title="welcome!"
           values={this.state}
         />
         <p>

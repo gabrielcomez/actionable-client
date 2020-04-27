@@ -1,17 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 export default function NavBar(props) {
   console.log(">>>props @navbar comp", props);
   return (
     <nav className="NavBar">
-      <Link to="/"> home </Link>
-      <Link to="/signup"> users</Link>
+      <Link className="NavBar-item1" to="/">
+        {" "}
+        ac+ionable{" "}
+      </Link>
+      <Link className="NavBar-item2" to={"/events"}>
+        search by location
+      </Link>
+      <Link className="NavBar-item3" to="/signup">
+        {" "}
+        users
+      </Link>
       {props.user.token !== null && props.user.name !== null ? (
-        <p>
-          You are signed in as{" "}
-          <Link to={`/profile/${props.user.id}`}> {props.user.name}</Link>{" "}
-        </p>
+        <Link className="NavBar-item4" to={`/profile/${props.user.id}`}>
+          {" "}
+          signed in as {props.user.name}
+        </Link>
       ) : null}
     </nav>
   );

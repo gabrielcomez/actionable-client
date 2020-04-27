@@ -26,11 +26,12 @@ class SignIn extends Component {
     return (
       <div>
         <UserForm
-          text="sign in 🔑"
-          isSignIn
-          values={this.state}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          isSignIn
+          text="sign in 🔑"
+          title="welcome back"
+          values={this.state}
         />
         <p>
           If you don't have an account yet,

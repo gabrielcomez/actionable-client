@@ -1,40 +1,155 @@
-.App {
-  text-align: center;
+body,
+html {
+  height: 100%;
+  margin: 0;
+  background-color: #a1c3e6;
   font-family: "Open Sans", Arial, sans-serif;
-  margin: auto;
-  padding: 2%;
-  display: block;
-}
-
-.NavBar {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-bottom: 5%;
-}
-
-.SiteHome {
-  margin: 20vw;
-}
-
-body {
-  color: #336699;
 }
 
 a {
+  color: #116699;
   text-decoration: none;
-  color: #113399;
 }
 
 button {
-  margin: 2%;
+  color: #b3d9ff;
+  margin: 1%;
+  border-color: #b3d9ff;
+  border-radius: 1px;
+
+  padding-left: 20%;
+  padding-right: 20%;
+  text-decoration: none;
   width: max-content;
-  height: auto;
-  background-color: #33ff99;
-  color: #cc1486;
-  padding: 2%;
 }
 
-/* fluorescent green: 33ff99 */
-/* dark blue: 336699 */
-/* fuscia: cc1486 */
+.Content {
+  color: #336699;
+  display: block;
+  margin: 0;
+  text-align: center;
+}
+
+.form label {
+  padding-right: 20px;
+}
+
+.home-img {
+  background-image: linear-gradient(rgba(161, 195, 230), rgba(255, 191, 0, 0.5)),
+    url("../src/man-with-fireworks-769525.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.home-text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  font-size: 7vh;
+  transform: translate(-50%, -50%);
+  color: #e2e7ec;
+  text-align: center;
+}
+
+.userFormImg {
+  background-image: url("https://images.pexels.com/photos/939328/pexels-photo-939328.jpeg");
+  height: 40vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+input[type="text"],
+select {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="email"],
+select {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: rgba(255, 255, 255, 0);
+
+  border-color: hsl(210, 50%, 40%);
+  border-radius: 4px;
+  color: #336699;
+  cursor: pointer;
+  margin: 8px 0;
+  padding: 14px 20px;
+  width: 30%;
+}
+
+input[type="submit"]:hover {
+  background-color: #3366997e;
+  border-color: #b3d9ff;
+  color: #b3d9ff;
+}
+
+.NavBar {
+  align-items: center;
+  border-bottom: #336699;
+  background-color: none;
+  display: inline-grid;
+  font-size: 14px;
+  grid-template-columns: 5% 20% auto 15% 15% 15% 5%;
+  justify-items: space-between;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  overflow: hidden;
+  width: 100%;
+}
+
+.NavBar a:hover {
+  color: #ffbf00;
+}
+
+.NavBar-item1 {
+  grid-column-end: 2;
+  grid-column-start: 2;
+}
+
+.NavBar-item2 {
+  grid-column-end: 4;
+  grid-column-start: 4;
+}
+.NavBar-item3 {
+  grid-column-end: 5;
+  grid-column-start: 5;
+}
+.NavBar-item4 {
+  grid-column-end: 6;
+  grid-column-start: 6;
+}
+
+.submit {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 1px;
+  color: #336699;
+  font-size: 14px;
+  margin-top: 1%;
+  /* padding-left: 20%;
+  padding-right: 20%; */
+  padding-top: 1%;
+  padding-bottom: 1%;
+  text-decoration: none;
+  width: max-content;
+}
