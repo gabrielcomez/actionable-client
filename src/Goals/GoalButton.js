@@ -44,7 +44,7 @@ class GoalButton extends Component {
     return (
       <div>
         To add this event to your goals
-        <Link to="/signin"> sing in</Link>
+        <Link to="/signin"> sign in</Link>
         🔑
       </div>
     );

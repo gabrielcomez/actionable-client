@@ -35,7 +35,7 @@ class SignIn extends Component {
         />
         <p>
           If you don't have an account yet,
-          <Link to="/signup"> sing up</Link>
+          <Link to="/signup"> sign up</Link>
           🙌
         </p>
       </div>
@@ -44,7 +44,7 @@ class SignIn extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(">>>state @signin comp", state);
+  // console.log(">>>state @signin comp", state);
   return {
     token: state.user.auth,
   };
