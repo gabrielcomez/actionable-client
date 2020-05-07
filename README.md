@@ -6,7 +6,8 @@ Actionable lets you take a deeper dive in your personal interests!
 At actionable any visitor to our website can search, based on location, for events they want to attend 🔍
 Any signed up user, they can also add the events they like to their goals 👤
 
-![](public/actionable.mp4)
+![](public/actionable.gif
+)
 
 Learning in the process 📖💻
 
