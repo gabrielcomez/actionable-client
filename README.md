@@ -1,7 +1,7 @@
 # actionable 🏋️
 Actionable lets you take a deeper dive in your personal interests!
 
-#### 🌐 You can check our beautiful website and start making your dreams realities 
+#### 🌐 Check the deployed website https://getactionable.herokuapp.com/ and start making your dreams realities 🤩
 
 ![](images/actionable.png)
 
@@ -19,7 +19,7 @@ Any signed up user, they can also add the events they like to their goals 👤
 
 This app was developed as my portfolio project after completing the Codaisseur Academy in Amsterdam, the Netherlands 💻
 
-[![Watch the video](images/videoplayer.png)](https://drive.google.com/open?id=1DsX1pYU9WKhiPgXM22JbFP3EDJIDf6KE) 
+[![video-presentation of the project](images/videoplayer.png)](https://drive.google.com/open?id=1DsX1pYU9WKhiPgXM22JbFP3EDJIDf6KE) 
 
 The following technologies were used to make it possible CSS | React with Redux | Express | Rest API | SQL | JWT | bcrypt
 
