@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const dbUrl = process.DATABASE_URL || "http://localhost:4000";
+const dbUrl =
+  process.DATABASE_URL || "https://getactionable-server.herokuapp.com";
 
 export const LOCATION_QUERY = "LOCATION_QUERY";
 
