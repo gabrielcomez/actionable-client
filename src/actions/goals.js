@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const dbUrl =
-  process.DATABASE_URL || "https://getactionable-server.herokuapp.com/";
+const dbUrl = process.DATABASE_URL || "http://localhost:4000";
 
 export const GOAL_ADD = "GOAL_ADD";
 

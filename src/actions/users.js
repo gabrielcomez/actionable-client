@@ -2,8 +2,7 @@ import axios from "axios";
 
 export const SIGN_UP = "SIGN_UP";
 
-const dbUrl =
-  process.DATABASE_URL || "https://getactionable-server.herokuapp.com/";
+const dbUrl = process.DATABASE_URL || "http://localhost:4000";
 
 function signupDone() {
   return { type: SIGN_UP };
